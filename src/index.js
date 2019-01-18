@@ -21,18 +21,13 @@ async function main() {
   const sim = new Simulation(filePaths, files, fileLoader);
   await sim.readyPromise;
 
-  console.log('pre run: global.lineCounter', global.lineCounter);
   console.log = noop;
   const results = await sim.run(SIMULATION_TIME);
   await fileLoader.save(results);
-  // console.log('run: global.lineCounter', global.lineCounter);
-  // console.log('run: this.lineCounter.stats', this.lineCounter.stats);
 
-  setTimeout(function() {
-    console.log = log;
-    console.log('Test generation finished');
-    console.log('global.lineCounter', global.lineCounter);
-  }, 100);
+  console.log = log;
+  console.log('Test generation finished.');
+  console.log('');
 }
 
 main();
