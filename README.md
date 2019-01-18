@@ -5,9 +5,10 @@ This application generates automatically unit tests. It's aim is to get 100% lin
 
 Current version only works with functions which have basic if-else structure. Anything more complex will not work. This is a proof of concept level application.
 
+
 ## Setup, Running and Testing
 
-Application is based on [Node.js](https://nodejs.org/). Install it before proceeidng.
+Application is based on [Node.js](https://nodejs.org/). Install it before proceeding.
 
 ```bash
 # Install
@@ -16,11 +17,16 @@ npm install
 # Run
 npm start target.js
 
-# Test
+# Example usage
+npm start test/cases/pick-one.js
+npm start test/cases/sum.js
+
+# Test project
 npm test
 ```
 
-## The purpose of tests
+
+## The purpose of tests
 
 [TDD saves resources](https://www.computer.org/csdl/mags/so/2007/03/s3024.pdf) and:
 
@@ -41,19 +47,19 @@ These aspects greatly affect test generation performance and results:
   4. Gradien descent part for amplitude change of mutations over iterations and amount of genomes to choose from.
 
 Speeding up factors
-  * Pre calculated starting set
+  * Befeficially precalculated starting set
   * Different agent programs for different type of modules
 
 Terms
-  * A genome is full set of genetic material and is formed by genes. Our full set is all the possible tests that could be generated.
-  * A gene is a part of genome and defines a unit of heredity. For us a gene represents a test.
-  * A nucleotide is a building block of a gene. Our tests are constructed from numbers and a nucleatide is one of those numbers.
+  * A genome is full set of genetic material and is formed by genes. Our genome set is all the possible test cases that could be generated.
+  * A gene is a part of genome and defines a unit of heredity. For us a gene represents a test case.
+  * A nucleotide is a building block of a gene. Our genes are comprised from numbers and a nucleotide is one of those numbers.
 
 ### Scoring
 
 Agent performance should be measured based on it's effect on the environment - not internal state. (Machine Learning - the Third Edition, Russel & Norvig 2010, page. 37)
 
-In simple version it seems to be enought to simple follow the amount of lines getting covered. A good addition would be the amount of test cases required to get the current result. Less cases would increase the bonus.
+In simple version it seems to be enought to follow the amount of lines getting covered. A good addition would be the amount of test cases required to get the current result. Less cases would increase the bonus. And the result would aim to get high line coverage with less test cases.
 
 ```js
 // file: src/scoring.js
@@ -65,19 +71,20 @@ function score(stats) {
 
 ### Meta Genes
 
-For a function to be tested there are three kinds of genes:
+For a test case there are three kinds of nucleotides:
 
 1. Is a gene active. If it is print the related test case. If not do not include the test in the test file.
 2. Type of a parameter. Only basic types for now: uint, small int, int, double, string, bool and null.
 3. The value of the previously described type.
 
-The gene structure could be for a three parameter function:
+The gene structure could be for a two parameter function:
 
 ```js
 // The first is for activation.
-// From the second to the last there are type and value pairs, but all the values are in one array for the sake of performance and mutation handling.
+// From the second to the last there are type and value pairs.
+// All the values are in one array for the sake of performance and mutation handling.
 
-[0.5, 0.1, 0.4, 0.2, 0.9, 0.7, 0.3, ...]
+[0.5, 0.1, 0.4, 0.2, 0.9]
 ```
 
 There are double amount of possible genes than there are branches in the application. And activation value is for reducing the amount of resulting test cases to bare minimum.
