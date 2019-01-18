@@ -23,7 +23,6 @@ class FileLoader {
   }
 
   async save(files) {
-    console.log('Saving tests:', files.map(a => a.path));
     return Promise.all(files.map(a => {
       return write(a.path, a.content);
     }));

@@ -5,7 +5,7 @@ class Scoring {
   }
 
   score(stats) {
-    return Math.floor(stats.visited.length * 10000);
+    return stats.visited.length * 10000;
   }
 }
 

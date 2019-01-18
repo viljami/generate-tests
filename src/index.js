@@ -16,6 +16,7 @@ async function main() {
 
   console.log('Generating tests for:', filePaths);
   console.log('');
+  console.log('Running...');
 
   const files = await fileLoader.load(filePaths);
   const sim = new Simulation(filePaths, files, fileLoader);
@@ -26,7 +27,10 @@ async function main() {
   await fileLoader.save(results);
 
   console.log = log;
+  console.log('');
   console.log('Test generation finished.');
+  console.log('Generated tests:');
+  console.log(results.map(a => a.path));
   console.log('');
 }
 
