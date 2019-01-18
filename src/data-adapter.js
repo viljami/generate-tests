@@ -39,7 +39,7 @@ class DataAdapter {
   read(data, dataCount, optionCount, dataLength) {
     const results = [];
     for (let i = 0; i < dataLength; i += dataCount) {
-      const isActive = data[i] > 0.0;
+      const isActive = data[i] > 0.3;
       if (isActive) {
         const args = [];
         for (let j = 1; j < dataCount; j += 2) {

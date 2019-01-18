@@ -5,7 +5,7 @@ const optimist = require('optimist');
 const FileLoader = require('./file-loader');
 const Simulation = require('./simulation');
 
-const SIMULATION_TIME = 1500; // ms
+const SIMULATION_TIME = 2500; // ms
 
 const log = console.log;
 const noop = () => void 0;

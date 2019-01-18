@@ -58,8 +58,8 @@ class Case {
       const score = gene.score;
       gene.save();
       gene.mutate(amplitude);
-      amplitude -= 0.0001;
-      if (amplitude < 0.1) amplitude = 0.1;
+      amplitude -= 0.001;
+      if (amplitude < 0.1) amplitude = 0.3;
 
       // 2. generate tests for the methods
       const result = this.testGenerator
