@@ -65,7 +65,7 @@ In simple version it seems to be enought to follow the amount of lines getting c
 // file: src/scoring.js
 
 function score(stats) {
-  return Math.floor(stats.visited.length * 10000);
+  return stats.visited.length * 10000;
 }
 ```
 
