@@ -2,7 +2,6 @@ const DataAdapter = require('./data-adapter');
 const GeneticAI = require('./genetic-ai');
 const LineCounter = require('./line-counter');
 const Scoring = require('./scoring');
-require('riteway');
 
 const IS_IF_REGEXP = /(\s|)if\s*\(/;
 

@@ -38,7 +38,7 @@ const testTemplate = {
     const parts = targetFilePath.split('/');
     return `
 const describe = require('riteway').describe;
-const ${name} = require('./${parts[parts.length - 1]}');
+const ${name} = require('./${parts[parts.length - 1].split('.js')[0]}');
 
 describe('${name}', async assert => {`;
   },

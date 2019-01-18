@@ -1,7 +1,7 @@
 
 module.exports = function(a, b, c) {
   let i;
-  if (a > b && a > b) {
+  if (a > b && a > c) {
     i = a;
   }
 

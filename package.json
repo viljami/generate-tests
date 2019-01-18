@@ -1,19 +1,25 @@
 {
   "name": "autotest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automated test generation",
   "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc riteway tests/**/*.test.js | tap-spec"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "test generator"
+  ],
+  "author": "Viljami Peltola",
+  "license": "MIT",
   "dependencies": {
     "nyc": "^13.1.0",
     "optimist": "^0.6.1",
     "riteway": "^4.0.1",
-    "tap-nyc": "^1.0.3"
+    "tap-spec": "^5.0.0"
   }
 }
