@@ -73,7 +73,7 @@ function score(stats) {
 
 For a test case there are three kinds of nucleotides:
 
-1. Is a gene active. If it is print the related test case. If not do not include the test in the test file. This is meta nucleotide.
+1. Is a gene active? If it is, print the related test case. If not, do not include the test in the test file. This is meta nucleotide.
 2. Type of a parameter. Only basic types for now: uint, small int, int, double, string, bool and null.
 3. The value of the previously described type.
 
