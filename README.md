@@ -42,7 +42,7 @@ Source: [Why Bother with Test Discipline?](https://medium.com/javascript-scene/w
 
 These aspects greatly affect test generation performance and results:
   1. Scoring function which directs the evolution of the genomes.
-  2. Meta genes tresholds.
+  2. Meta nucleotide treshold.
   3. Time allocated to mutations.
   4. Gradien descent part for amplitude change of mutations over iterations and amount of genomes to choose from.
 
@@ -69,11 +69,11 @@ function score(stats) {
 }
 ```
 
-### Meta Genes
+### Meta Nucleotide
 
 For a test case there are three kinds of nucleotides:
 
-1. Is a gene active. If it is print the related test case. If not do not include the test in the test file.
+1. Is a gene active. If it is print the related test case. If not do not include the test in the test file. This is meta nucleotide.
 2. Type of a parameter. Only basic types for now: uint, small int, int, double, string, bool and null.
 3. The value of the previously described type.
 
