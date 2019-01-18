@@ -57,7 +57,7 @@ Terms
 
 ### Scoring
 
-Agent performance should be measured based on it's effect on the environment - not internal state. (Machine Learning - the Third Edition, Russel & Norvig 2010, page. 37)
+"As a general rule, it is bretter to design performance measures according to what one actually wants in the environment, rather than how one thinks the agent should behave." (Machine Learning - the Third Edition, Russel & Norvig 2010, page. 37)
 
 In simple version it seems to be enought to follow the amount of lines getting covered. A good addition would be the amount of test cases required to get the current result. Less cases would increase the bonus. And the result would aim to get high line coverage with less test cases.
 
