@@ -91,7 +91,7 @@ There are double amount of possible genes than there are branches in the applica
 
 ```js
 // file: src/data-adapter.js
-// The treshod of gene activation.
+// The treshold of gene activation.
 
 const isActive = data[0] > 0.3;
 ```
